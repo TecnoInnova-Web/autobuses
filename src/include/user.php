@@ -1,5 +1,7 @@
 <?php
 
+include_once 'conexion.php';
+
 class User extends DB{
 
         private $nombre;
@@ -8,7 +10,7 @@ class User extends DB{
         public function userExist($user, $pass){
             $md5pass = md5($pass);
 
-            $query = $this->connect()->prepare('SELECT * FROM tbl_usuarios WHERE usuario = :user AND contrasena =:pass');
+            $query = $this->connect()->prepare('SELECT * FROM tbl_usuarios WHERE usuario = :user AND pass =:pass');
             $query->execute(['user' => $user, 'pass' => $md5pass]);
 
             if($query->rowCount()){
@@ -20,7 +22,7 @@ class User extends DB{
         }
 
         public function setUser($user){
-            $query = $this->connect()->prepare('SELECT * FROM tbl_ususarios where usuarios = :user ');
+            $query = $this->connect()->prepare('SELECT * FROM tbl_usuarios where usuario = :user ');
             $query->execute(['user' => $user]);
 
             foreach($query as $currentUser){

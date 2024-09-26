@@ -13,6 +13,14 @@
 </head>
 
 <body class="bg-grey-900 d-flex justify-content-center align-items-center vh-100">
+    <form action="" method="POST">
+
+    <?php
+     if(isset($errorLogin)){
+         echo $errorLogin;
+     }
+
+    ?>
     <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
         <div class="d-flex justify-content-center">
             <i class='fas fa-code' style='font-size:48px;'></i>
@@ -24,23 +32,23 @@
                 <i class='fas fa-user-alt'></i>
 
             </div>
-            <input class="form-control bg-light" type="text" placeholder="Username" />
+            <input class="form-control bg-light" type="text" placeholder="Username" name="username"/>
         </div>
         <div class="input-group mt-1">
             <div class="input-group-text bg-info">
                 <i class='fas fa-lock'></i>
             </div>
-            <input class="form-control bg-light" type="password" placeholder="Password" />
+            <input class="form-control bg-light" type="password" placeholder="Password" name="password"/>
         </div>
         <div class="d-flex justify-content-around mt-1">
             <div class="d-flex align-items-center gap-1">
 
-                <button type="button" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                     Iniciar
                 </button>
 
             </div>
-
+            </form>
 
 
 </body>
