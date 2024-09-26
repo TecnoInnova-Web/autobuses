@@ -2,6 +2,7 @@
 include_once 'src/include/user.php';
 include_once 'src/include/user_session.php';
 
+
 $userSession = new UserSession();
 $user = new User();
 
